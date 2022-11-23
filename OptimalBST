@@ -23,6 +23,10 @@ int main(int argc, char const *argv[])
         freopen("input.txt","r",stdin);
         freopen("output.txt","w",stdout);
     #endif
+    
+    //coding start here...
+    
+    
     ll n;cin>>n;
     vector<ll>k(n),f(n);
     for(ll i=0;i<n;i++){
@@ -41,7 +45,7 @@ int main(int argc, char const *argv[])
         for(ll i=0;i<=n-len;i++){
             ll j=i+len;
             cost[i][j]=INT_MAX;
-            ll weight=accumulate(f.begin()+i,f.begin()+j,0LL);
+            ll weight=accumulate(f.begin()+i,f.begin()+j,0LL); // sum of frequency from i+1...j
             for(ll k=i;k<=j;k++){
                 ll tmp = cost[i][k-1]+cost[k][j]+weight;
                 if(tmp < cost[i][j]){
@@ -51,6 +55,7 @@ int main(int argc, char const *argv[])
             }
         }
     }
+    //printing the cost table.
     for(auto x: cost){
         for(auto y: x){
             cout << y << " ";
