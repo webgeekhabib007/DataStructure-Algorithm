@@ -56,3 +56,8 @@ int main(int argc, char const *argv[])
   
   return 0;
 } 
+//input:
+// number of items:4
+// max weight: 10
+// items weight: 5 4 6 3
+// items profit: 10 40 30 50
